@@ -1,0 +1,26 @@
+1. 
+
+  (1) Select * from R where id = 31;
+   
+   Read the root of the B-tree, due to 31 < 47, the left child code is chosen,
+then serach this code, find that 31 is the second key value, so read the rightmost child node and find the tuple position pointer corresponding to 31. Finally, read the record pointed to by this pointer from the data file. 
+
+  (2) Select * from R where id > 54;
+
+   First, find the position of key equial to 55 in the B-tree.
+   
+   Read the root of the B-tree, due to 55 > 47, the right child code is chosen,
+then read this code, find that 55 is less than the fisrt key value of this code, so read the leftmost child node and find that 55 is the third key value. 
+Finally, starting from this key value of 55, search for the key values of the same level leaf nodes one by one to the right, and read the records pointed to by the corresponding pointers from the data file.
+
+
+2. 
+
+(1) Insert into R(id,...) values (34, ...);
+首先，找出key=34在叶节点中的位置。由于第三个叶节点中第一个键值是31，第二个键值是39，而每个节点最多可以存放三个键值，所以，可以将键值34插入第三个叶节点的第二个键值位置，而将键值39移到第三个（原先为空的）位置。这样，第三个叶节点变成：
+------------
+|31 | 34 | 39|
+------------
+ 
+其它节点都不变。
+
