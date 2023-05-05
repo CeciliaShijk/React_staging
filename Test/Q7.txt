@@ -1,0 +1,28 @@
+Q7.
+
+32=2^5
+所以，索引5位。
+
+1. SELECT * FROM StudentWHERE gender='Female' AND age=25 AND maior='cs'；
+
+      *011*
+即 ：
+       00110
+       00111
+       10110
+       10111
+这4页。
+
+2. SELECT * FROM Student WHERE name='David' AND major='cs';
+
+    00**1
+即：
+        00001
+        00011
+    00101
+    00111
+这4页。
+   
+
+
+ 
